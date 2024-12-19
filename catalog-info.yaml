@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fds7sycfs-nodejs-gitops
+  description: This is GitOps manifest for fds7sycfs-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fds7sycfs-nodejs
+    backstage.io/kubernetes-id: fds7sycfs-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fds7sycfs-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fds7sycfs-nodejs
